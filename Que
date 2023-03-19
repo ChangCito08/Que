@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>¿Regresamos?</title>
+    
+    <style>
+      body {
+        background-color: #333333;
+        font-family: 'Merriweather', serif;
+      }
+      h1 {
+        font-size: 48px;
+        text-align: center;
+        margin-top: 50px;
+        color: #0077b6;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
+      input[type="radio"] {
+        margin: 10px;
+        appearance: none;
+        border: 2px solid #a6a6a6;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+      input[type="radio"]:checked {
+        border-color: #0077b6;
+      }
+      input[type="radio"] + label {
+        font-size: 24px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        color: #ffffff;
+      }
+      input[type="radio"]:checked + label {
+        color: #0077b6;
+      }
+      button {
+        margin-top: 30px;
+        padding: 10px 20px;
+        background-color: #0077b6;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: bold;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        outline: none;
+        transition: background-color 0.3s ease;
+      }
+      button:disabled {
+        background-color: #a6a6a6;
+        cursor: not-allowed;
+      }
+      button:hover:not(:disabled) {
+        background-color: #005b8c;
+      }
+      p {
+        font-size: 20px;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 50px;
+        font-family: 'Open Sans', sans-serif;
+        font-style: italic;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Ya pasó mucho tiempo <3</h1>
+    <p>¿Qué opinas? ¿Quieres regresar?</p>
+    <form>
+      <input type="radio" id="si" name="respuesta" value="si" onclick="habilitarBoton()"> 
+      <label for="si">Sí</label><br>
+      <input type="radio" id="no" name="respuesta" value="no" onclick="deshabilitarBoton()" disabled> 
+      <label for="no">No</label><br><br>
+      <button id="confirmar" onclick="mostrarMensaje()" disabled>¡POR FAVOR!</button>
+    </form>
+
+    <script>
+      function habilitarBoton() {
+        document.getElementById("confirmar").disabled = false;
+      }
+
+      function deshabilitarBoton() {
+        document.getElementById("confirmar").disabled = true;
+      }
+
+      function mostrarMensaje() {
+        if (document.getElementById("si").checked) {
+          alert("¡SIIII! Ahora vamos a comer...nos");
+        }
+      }
+    </script>
+  </body>
+</html>
